@@ -6,6 +6,7 @@ router.get('/getTaxidetails',getTaxidetails);
 router.get('/getsearchsets',getsearchsets);
 router.delete('/deletetaxidetail/:id',deletetaxidetail);
 router.patch('/updatetaxidetail/:id',uploadImages, updatetaxidetail);
+// router.get('/serchtriptype', serchtriptype);
 
 
 module.exports = router;

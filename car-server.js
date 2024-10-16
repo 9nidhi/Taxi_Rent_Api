@@ -14,6 +14,17 @@ const cardetailsRoutes = require('./Routes/Cardetails-user.route');
 const carrequirenmentsRoutes = require('./Routes/CarRequirements-user.routes');
 const distanceRoutes = require('./Routes/distance-cal.route');
 const taxiDetailsRoutes = require('./Routes/TaxiDetail.routes');
+const triptypeRoutes = require('./Routes/TripType.route');
+const newTaxiDetailsRoutes = require('./Routes/newTaxiDetails.route');
+const contactRoutes = require('./Routes/Contact-user.routes');
+const testimonialRoutes = require('./Routes/Testimonial.route');
+const galleryImgRoutes = require('./Routes/GalleryImage.route');
+const blogRoutes = require('./Routes/Blog.routes');
+const OneWayRouteRoutes = require('./Routes/OnewayRoute.route');
+const cityRoutes = require('./Routes/CityName.routes');
+const paymentRoutes = require('./Routes/PaymentInfo.routes');
+const userRoutes = require('./Routes/user.routes');
+
 
 const Database_Url = process.env.Database_Url ||'mongodb+srv://nidhivarniinfoteach:udrO62qNlm8MVNdU@cluster0.8dc0a0c.mongodb.net/Bhade-gadi-partner';
 
@@ -25,8 +36,6 @@ mongoose.connect(Database_Url, { useNewUrlParser: true,
   .catch((err) => console.log(err.message));
 
 const app = express();
-
-
 
 
 app.use(bodyParser.json());
@@ -61,6 +70,15 @@ app.use('/api/v1',cardetailsRoutes);
 app.use('/api/v1',cardetailsRoutes)
 app.use('/api/v1', distanceRoutes);
 app.use('/api/v1', taxiDetailsRoutes);
+app.use('/api/v1', newTaxiDetailsRoutes);
+app.use('/api/v1', contactRoutes);
+app.use('/api/v1', testimonialRoutes);
+app.use('/api/v1', galleryImgRoutes);
+app.use('/api/v1', blogRoutes);
+app.use('/api/v1', cityRoutes);
+app.use('/api/v1', OneWayRouteRoutes);
+app.use('/api/v1', paymentRoutes);
+app.use('/api/v1', userRoutes);
 
 app.all('*', (req, res) => {
 	res.json({
